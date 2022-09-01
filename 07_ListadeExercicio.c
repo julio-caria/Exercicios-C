@@ -12,16 +12,16 @@ main() {
 
     setlocale(LC_ALL, "Portuguese");
 
-    int celsius,
+    double celsius,
         fahrenheit;
 
     printf("Transformando graus Celsius em Fahrenheit...\n");
-    printf("Digite a temperatura em Graus Celcius: ");
-    scanf("%d", &celsius);
+    printf("Digite a temperatura em Graus Celsius: ");
+    scanf("%lf", &celsius);
 
-    celsius/5 = (fahrenheit-32)/9;
+    fahrenheit = 1.8 * celsius + 32;
 
-    printf("Convertendo %dºC em fahrenheit temos: %dºF", celsius, fahrenheit);
+    printf("Convertendo %.1lfºC em fahrenheit temos: %.1lfºF", celsius, fahrenheit);
 
     printf("\n\n");
     system("pause");

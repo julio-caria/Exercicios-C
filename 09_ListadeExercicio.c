@@ -21,18 +21,26 @@
 main() {
   setlocale(LC_ALL, "Portuguese");
 
-  double salarioBruto, txSindicato, hrsTrabalhadas, ganhoPhr, txInss,
-      impostoRenda, salarioLiquido, descontos;
+
+  int hrsTrabalhadas;
+
+  double salarioBruto, 
+       txSindicato, 
+       ganhoPhr, 
+       txInss,
+       impostoRenda, 
+       salarioLiquido, 
+       descontos;
 
   printf("Calculando seu rendimento mensal...\n");
   printf("Informe o ganho por hora trabalhada: ");
   scanf("%lf", &ganhoPhr);
 
   printf("Informe as horas que você trabalha no mês: ");
-  scanf("%lf", &hrsTrabalhadas);
+  scanf("%d", &hrsTrabalhadas);
 
   salarioBruto = ganhoPhr * hrsTrabalhadas;
-  printf("Seu salário trabalhando %.0lfh ganhando R$%.2lf/h é de R$%.2lf",
+  printf("Seu salário trabalhando %dh ganhando R$%.2lf/h é de R$%.2lf",
          hrsTrabalhadas, ganhoPhr, salarioBruto);
 
   impostoRenda = (salarioBruto * 11) / 100;
@@ -42,8 +50,8 @@ main() {
   descontos = impostoRenda + txInss + txSindicato;
   salarioLiquido = salarioBruto - descontos;
   printf("\n\nPor fim as contas ficaram da seguinte forma:\n(+) Salário Bruto: "
-         "R$%.2lf\n(-) IR - Imposto de Renda (11%): R$%.2lf\n(-) Taxa INSS "
-         "(5%): R$%.2lf\n(-) Taxa do Sindicato (5%): R$%.2lf\n(=) Salário "
+         "R$%.2lf\n(-) IR - Imposto de Renda (11%%): R$%.2lf\n(-) Taxa INSS "
+         "(5%%): R$%.2lf\n(-) Taxa do Sindicato (5%%): R$%.2lf\n(=) Salário "
          "Líquido: R$%.2lf",
          salarioBruto, impostoRenda, txInss, txSindicato, salarioLiquido);
 
