@@ -1,20 +1,20 @@
 // 3. Faça um Programa que verifique se uma letra digitada é "F" ou "M". Conforme a letra escrever: F - Feminino, M - Masculino, Sexo Inválido.
 
 // Funções adicionais
+// #include<ctype.h> // toLower() e toupper()
 // toLower() -> Converte para minúsculas
 // toupper() -> Converte para maiúsculas
 
 #include<stdio.h>
 #include<stdlib.h>
 #include<locale.h>
-#include<ctype.h>
 #include<string.h>
 
 main() {
     setlocale(LC_ALL, "Portuguese");
 
     char sexo;
-    char opcao[20];
+    char opcao;
 
     printf("\n\nVerificando o sexo do usuário...\n");
     printf("Escolha uma das opcoes abaixo de acordo com sexo que voce se identifica...\n\n");
@@ -26,13 +26,13 @@ main() {
     printf("Insira a opcao: ");
     scanf(" %c", &sexo);
 
-    if(toupper(sexo) == 'm') {
+    if(sexo == 'm' || sexo == 'M') {
         printf("O Sexo escolhido foi: M - Masculino\n");
         printf("Deseja manter essa opcao?\n");
         printf("Digite SIM (S) para encerrar o programa ou NAO (N) para voltar as opcoes: ");
         scanf(" %c", opcao);
 
-        while (toupper(opcao) != 'n'){
+        while (opcao != 'n' || opcao != 'N'){
             printf("\n\nVerificando o sexo do usuário...\n");
             printf("Escolha uma das opcoes abaixo de acordo com sexo que voce se identifica...\n\n");
             printf("M - Masculino;\n");
@@ -45,13 +45,13 @@ main() {
         }
 
         printf("\n\nFIM DO SISTEMA...");
-    } else if (toupper(sexo) == 'f') {
+    } else if (sexo == 'f' || sexo == 'F') {
         printf("O Sexo escolhido foi: F - Feminino\n");
         printf("Deseja manter essa opcao?\n");
         printf("Digite SIM (S) para encerrar o programa ou NAO (N) para voltar as opcoes: ");
         scanf("%s", opcao);
 
-        while (toupper(opcao) != 'N'){
+        while (opcao != 'n' || opcao != 'N'){
             printf("\n\nVerificando o sexo do usuário...\n");
             printf("Escolha uma das opcoes abaixo de acordo com o seu sexo...\n\n");
             printf("M - Masculino;\n");
@@ -64,14 +64,14 @@ main() {
         }
 
         printf("\n\nFIM DO SISTEMA...");
-    } else if (toupper(sexo) == 'o') {
+    } else if (sexo == 'o' || sexo == 'O') {
 
         printf("O Sexo escolhido foi: O - Outro\n");
         printf("Deseja manter essa opcao?\n");
         printf("Digite SIM (S) para encerrar o programa ou NAO (N) para voltar as opcoes: ");
         scanf(" %c", opcao);
 
-        while (toupper(opcao) != 'n'){
+        while (opcao != 'n' || opcao != 'N'){
             printf("\n\nVerificando o sexo do usuário...\n");
             printf("Escolha uma das opcoes abaixo de acordo com o seu sexo...\n\n");
             printf("M - Masculino;\n");
@@ -84,14 +84,14 @@ main() {
         }
 
         printf("\n\nFIM DO SISTEMA...");
-    } else if (toupper(sexo) == 'p'){
+    } else if (sexo == 'p' || sexo == 'P'){
 
         printf("O sexo escolhido foi: P - Prefiro não dizer\n");
         printf("Deseja manter essa opcao?\n");
         printf("Digite SIM (S) para encerrar o programa ou NAO (N) para voltar as opcoes: ");
         scanf(" %c", opcao);
 
-        while (toupper(opcao) != 'n'){
+        while (opcao != 'n' || opcao != 'N'){
             printf("\n\nVerificando o sexo do usuário...\n");
             printf("Escolha uma das opcoes abaixo de acordo com o seu sexo...\n\n");
             printf("M - Masculino;\n");
@@ -104,15 +104,8 @@ main() {
         }
     } else {
         printf("\nErro... Tente inserir uma opcao valida!\n");
-        printf("\n\nVerificando o sexo do usuário...\n");
-        printf("Escolha uma das opcoes abaixo de acordo com sexo que voce se identifica...\n\n");
-        printf("M - Masculino;\n");
-        printf("F - Feminino;\n");
-        printf("O - Outro;\n");
-        printf("P - Prefiro não dizer");
-        printf("\n\n");
-        printf("Insira a opcao: ");
-        scanf(" %c", &sexo);
+        
+        printf("FIM DO SISTEMA...\n");
     }
 
     printf("\n\n");

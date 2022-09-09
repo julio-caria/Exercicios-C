@@ -4,10 +4,10 @@
 // A mensagem "Aprovado com Distinção", se a média for igual a dez.
 
 
-#include "stdio.h" 
-#include "stdlib.h "
-#include "locale.h"
-#include "string.h"
+#include <stdio.h> 
+#include <stdlib.h>
+#include <locale.h>
+#include <string.h>
 
 main() {
     setlocale(LC_ALL, "Portuguese");
@@ -17,7 +17,7 @@ main() {
             nota2,
             media;
     
-    printf("Calculando a media do aluno e verificando se foi APROVADO ou REPROVADO...\n");
+    printf("\nCalculando a media do aluno e verificando se foi APROVADO ou REPROVADO...\n");
     printf("Informe o nome do aluno: ");
     scanf("%s", &nome);
 
@@ -28,11 +28,11 @@ main() {
 
     media = (nota1+nota2)/2;
     if(media >= 7 && media <= 9.9) {
-        printf("O aluno %s foi APROVADO para o proximo semestre, pois sua media foi de %.1lf.", nome, media);
+        printf("\nO aluno %s foi APROVADO para o proximo semestre, pois sua media foi de %.1lf.", nome, media);
     } else if (media >= 10){
-        printf("O aluno %s foi APROVADO COM DISTINCAO  para o proximo semestre, pois sua media foi %.1lf, igual a 10.", nome, media);
+        printf("\nO aluno %s foi APROVADO COM DISTINCAO  para o proximo semestre, pois sua media foi %.1lf, igual a 10.", nome, media);
     } else {
-        printf("O Aluno %s foi REPROVADO, pois teve media %.1lf, ou seja, inferior ao requerido (7.0)");
+        printf("\nO Aluno %s foi REPROVADO, pois teve media %.1lf, ou seja, inferior ao requerido (7.0)", nome, media);
     }
 
     printf("\n\n");
